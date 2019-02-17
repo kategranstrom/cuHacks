@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -67,9 +68,9 @@ public class Summary extends AppCompatActivity {
 
     public void calculate(View view) {
         Intent intent = new Intent(this, totalpage.class);
-        startActivity(intent);
-
-        if(parent_income_1<= 50000 )
+        String fmessage2 = Integer.toString(parent_income_1);
+        Log.d("TAG", fmessage2);
+        if(parent_income_1 <= 50000 )
         {
             if (parent_kids_2 == 0) {
                 parent_support_1 = 0.0;
@@ -98,7 +99,7 @@ public class Summary extends AppCompatActivity {
                 parent_support_1 = 0.0;
             }
 
-            if(parent_kids_2 == 1)
+            else if(parent_kids_2 == 1)
             {
                 parent_support_1 = parent_income_1 * 0.008641;
             }
@@ -114,6 +115,10 @@ public class Summary extends AppCompatActivity {
             {
                 parent_support_1 = parent_income_1 * 0.02238;
             }
+            String s1 = Double.toString(parent_kids_2);
+            Log.d("TAG", s1);
+            String s = Double.toString(parent_support_1);
+            Log.d("TAG", s);
         }
         else if (parent_income_1 > 100000 && parent_income_1 <= 150000)
         {
@@ -121,7 +126,7 @@ public class Summary extends AppCompatActivity {
                 parent_support_1 = 0.0;
             }
 
-            if(parent_kids_2 == 1)
+            else if(parent_kids_2 == 1)
             {
                 parent_support_1 = parent_income_1 * 0.008869;
             }
@@ -142,7 +147,7 @@ public class Summary extends AppCompatActivity {
             if (parent_kids_2 == 0) {
                 parent_support_1 = 0.0;
             }
-            if (parent_kids_2 == 1) {
+            else if (parent_kids_2 == 1) {
                 parent_support_1 = (parent_income_1 * 0.72) + 1299;
             }
             else if (parent_kids_2 == 2) {
@@ -163,7 +168,7 @@ public class Summary extends AppCompatActivity {
                 if(parent_kids_1 == 0) {
                     parent_support_2 = 0.0;
                 }
-                if(parent_kids_1 == 1 )
+                else if(parent_kids_1 == 1 )
                 {
                     parent_support_2 = parent_income_2 * 0.00629;
                 }
@@ -186,7 +191,7 @@ public class Summary extends AppCompatActivity {
                 if (parent_kids_1 == 0) {
                     parent_support_2 = 0.0;
                 }
-                if(parent_kids_1 == 1)
+                else if(parent_kids_1 == 1)
                 {
                     parent_support_2 = parent_income_2 * 0.008641;
                 }
@@ -208,7 +213,7 @@ public class Summary extends AppCompatActivity {
                 if(parent_kids_1 == 0) {
                     parent_support_2 = 0.0;
                 }
-                if(parent_kids_1 == 1)
+                else if(parent_kids_1 == 1)
                 {
                     parent_support_2 = parent_income_2 * 0.008869;
                 }
@@ -219,6 +224,8 @@ public class Summary extends AppCompatActivity {
                 else if (parent_kids_1 == 3)
                 {
                     parent_support_2 = parent_income_2 * 0.01855;
+                    String s = Double.toString(parent_support_2);
+                    Log.d("TAG", s);
                 }
                 else
                 {
@@ -229,7 +236,7 @@ public class Summary extends AppCompatActivity {
                 if(parent_kids_1 == 0) {
                     parent_support_2 = 0.0;
                 }
-                if (parent_kids_1 == 1) {
+                else if (parent_kids_1 == 1) {
                     parent_support_2 = (parent_income_2 * 0.72) + 1299;
                 }
                 else if (parent_kids_1 == 2) {
@@ -243,38 +250,34 @@ public class Summary extends AppCompatActivity {
                 }
             }
 
-
-
-
-
-                diff = (parent_support_1 - parent_support_2); //Need Absolute Value
-
-                Intent intent2 = new Intent(this, totalpage.class);
+                diff = (parent_support_1 - parent_support_2);
+                if(diff < 0) diff *= -1;
+                String s = Double.toString(diff);
+                Log.d("TAG", s);
+                //Intent intent2 = new Intent(this, totalpage.class);
 
 
                 if (parent_support_1 > parent_support_2)
                 {
                     whichParent = "Parent 1";
-                    intent2.putExtra("name",whichParent);
-                    intent2.putExtra("amount",diff);
+                    intent.putExtra("name",whichParent);
+                    intent.putExtra("amount",diff);
                 }
                 else if (parent_support_2 > parent_support_1)
                 {
                     whichParent = "Parent 2";
-                    intent2.putExtra("name",whichParent);
-                    intent2.putExtra("amount",diff);
+                    intent.putExtra("name",whichParent);
+                    intent.putExtra("amount",diff);
 
                 }
                 else
                 {
                     whichParent = "Both Parents";
-                    intent2.putExtra("name",whichParent);
-                    intent2.putExtra("amount",diff);
+                    intent.putExtra("name",whichParent);
+                    intent.putExtra("amount",diff);
+                }
+                startActivity(intent);
                 }
 
-
-
-        }
-    }
-
+            }
 

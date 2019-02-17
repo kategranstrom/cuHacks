@@ -25,6 +25,11 @@ public class secondPage extends AppCompatActivity {
         intent.putExtra("EXTRA_INT2", finalMessage2);
         startActivity(intent);
     }
+
+    public void back(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
 
 

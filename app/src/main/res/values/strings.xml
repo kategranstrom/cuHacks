@@ -14,8 +14,9 @@
     <string name="totalpage_title">Child Support</string>
     <string name="income1">Parent 1 Income</string>
     <string name="income2">Parent 2 Income</string>
-    <string name="custody1">Parent 1 Custody</string>
-    <string name="custody2">Parent 2 Custody</string>
+    <string name="custody1">Parent 1 Custody:</string>
+    <string name="custody2">Parent 2 Custody:</string>
+    <string name="thirdpage_back">Back</string>
     <string name="home">Home</string>
 
 
