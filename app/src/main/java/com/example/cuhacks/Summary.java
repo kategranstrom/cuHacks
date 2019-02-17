@@ -75,7 +75,7 @@ public class Summary extends AppCompatActivity {
             if (parent_kids_2 == 0) {
                 parent_support_1 = 0.0;
             }
-            if(parent_kids_2 == 1 )
+            else if(parent_kids_2 == 1 )
             {
                 parent_support_1 = parent_income_1 * 0.00629;
             }
@@ -259,20 +259,20 @@ public class Summary extends AppCompatActivity {
 
                 if (parent_support_1 > parent_support_2)
                 {
-                    whichParent = "Parent 1";
+                    whichParent = "Only Parent 1 pays";
                     intent.putExtra("name",whichParent);
                     intent.putExtra("amount",diff);
                 }
                 else if (parent_support_2 > parent_support_1)
                 {
-                    whichParent = "Parent 2";
+                    whichParent = "Only Parent 2 pays";
                     intent.putExtra("name",whichParent);
                     intent.putExtra("amount",diff);
 
                 }
                 else
                 {
-                    whichParent = "Both Parents";
+                    whichParent = "Both Parents pay";
                     intent.putExtra("name",whichParent);
                     intent.putExtra("amount",diff);
                 }
