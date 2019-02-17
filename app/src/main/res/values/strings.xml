@@ -11,6 +11,7 @@
     <string name="calculate">Calculate</string>
     <string name="goback">Back</string>
     <string name="summary">Summary</string>
+    <string name="totalpage_title">Child Support</string>
     <string name="income1">Parent 1 Income</string>
     <string name="income2">Parent 2 Income</string>
     <string name="custody1">Parent 1 Custody</string>
