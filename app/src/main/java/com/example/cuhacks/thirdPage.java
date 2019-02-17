@@ -23,12 +23,22 @@ public class thirdPage extends AppCompatActivity {
         String message2 = editText2.getText().toString();
 
         int finalMessage2 = Integer.parseInt(message2);
+
+        if (finalMessage2 <0){
+            finalMessage2 = 0;
+        }
         intent.putExtra("EXTRA_INT1", finalMessage2);
+
 
         EditText editText3 = (EditText) findViewById(R.id.editText4);
         String message3 = editText3.getText().toString();
         int finalMessage3 = Integer.parseInt(message3);
+
+        if(finalMessage3 <0){
+            finalMessage3 = 0;
+        }
         intent.putExtra("EXTRA_INT2", finalMessage3);
+
 
         int i1 = getIntent().getIntExtra("EXTRA_INT1", default1);
         int i2 = getIntent().getIntExtra("EXTRA_INT2", default2);
