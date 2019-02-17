@@ -5,4 +5,5 @@
     <string name="secondpage_next">Next</string>
     <string name="secondpage_parent1">Parent 1</string>
     <string name="secondpage_parent2">Parent 2</string>
+    <string name="thirdpage_title">Number of Children</string>
 </resources>
