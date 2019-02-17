@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">cuHacks</string>
     <string name="start_button">Calculate</string>
+    <string name="secondpage_title">Income</string>
+    <string name="secondpage_next">Next</string>
+    <string name="secondpage_parent1">Parent 1</string>
+    <string name="secondpage_parent2">Parent 2</string>
 </resources>
