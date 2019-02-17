@@ -259,13 +259,13 @@ public class Summary extends AppCompatActivity {
 
                 if (parent_support_1 > parent_support_2)
                 {
-                    whichParent = "Parent 1 pays: ";
+                    whichParent = "Parent 1 monthly payment: $";
                     intent.putExtra("name",whichParent);
                     intent.putExtra("amount",diff);
                 }
                 else if (parent_support_2 > parent_support_1)
                 {
-                    whichParent = "Parent 2 pays: ";
+                    whichParent = "Parent 2 monthly payment: $";
                     intent.putExtra("name",whichParent);
                     intent.putExtra("amount",diff);
 
