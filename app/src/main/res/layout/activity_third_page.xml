@@ -75,7 +75,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="396dp"
-        android:text="A parent is considered to be in custody of a child if you are with them for a minimum of 40% of the time. (i.e if one parent has the child for 60% percent of the time and the other parent has the child the remining 40% of the time, the child is considered to be in shared custody with their parents)"
+        android:text="A parent is considered to be in custody of a child if you are with them for a minimum of 40% of the time. (i.e if one parent has the child for 60% percent of the time and the other parent has the child the remaining 40% of the time, the child is considered to be in shared custody with their parents)"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
