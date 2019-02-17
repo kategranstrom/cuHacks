@@ -21,6 +21,14 @@ public class Summary extends AppCompatActivity {
             startActivity(intent);
         }
 
+    public void editCustody (View view) {
+        Intent intent = new Intent(this, thirdPage.class);
+        startActivity(intent);
+    }
+
+    public void goBack (View view) {
+        Intent intent = new Intent(this, thirdPage.class);
+        startActivity(intent);
 
 
         }
