@@ -8,6 +8,9 @@ import android.widget.EditText;
 
 public class thirdPage extends AppCompatActivity {
 
+    //private static final int EXTRA_INT1 = 0;
+    //private static final int EXTRA_INT2 = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,10 @@ public class thirdPage extends AppCompatActivity {
         String message3 = editText3.getText().toString();
         int finalMessage3 = Integer.parseInt(message3);
         intent.putExtra("EXTRA_INT2", finalMessage3);
+        int i1 = getIntent().getIntExtra("EXTRA_INT1", -1);
+        int i2 = getIntent().getIntExtra("EXTRA_INT2", -1);
+        intent.putExtra("EXTRA_INT3", i1);
+        intent.putExtra("EXTRA_INT4", i2);
         startActivity(intent);
     }
 }
