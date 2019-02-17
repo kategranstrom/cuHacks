@@ -28,11 +28,13 @@ public class Summary extends AppCompatActivity {
         //String fmessage2 = Integer.toString(message2);
         //TextView textView2 = findViewById(R.id.textView11);
         //textView2.setText(fmessage2);
-        int message2 = getIntent().getIntExtra("EXTRA_INT3", 8);
+        //Bundle extras = new Bundle();
+        //String stringVariableName = extras.getString
+        int message2 = getIntent().getIntExtra("EXTRA_INT3", 0);
         String fmessage2 = Integer.toString(message2);
         TextView textView2 = findViewById(R.id.textView11);
         textView2.setText(fmessage2);
-        int message3 = getIntent().getIntExtra("EXTRA_INT4", 8);
+        int message3 = getIntent().getIntExtra("EXTRA_INT4", 0);
         String fmessage3 = Integer.toString(message3);
         TextView textView3 = findViewById(R.id.textView12);
         textView3.setText(fmessage3);

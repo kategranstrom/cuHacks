@@ -20,7 +20,7 @@ public class secondPage extends AppCompatActivity {
         int finalMessage = Integer.parseInt(message);
         intent.putExtra("EXTRA_INT1", finalMessage);
         EditText editText2 = (EditText) findViewById(R.id.editText4);
-        String message2 = editText.getText().toString();
+        String message2 = editText2.getText().toString();
         int finalMessage2 = Integer.parseInt(message2);
         intent.putExtra("EXTRA_INT2", finalMessage2);
         startActivity(intent);

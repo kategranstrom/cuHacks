@@ -26,10 +26,10 @@ public class thirdPage extends AppCompatActivity {
         String message3 = editText3.getText().toString();
         int finalMessage3 = Integer.parseInt(message3);
         intent.putExtra("EXTRA_INT2", finalMessage3);
-        startActivity(intent);
         int i1 = getIntent().getIntExtra("EXTRA_INT1", -1);
         int i2 = getIntent().getIntExtra("EXTRA_INT2", -1);
         intent.putExtra("EXTRA_INT3", i1);
         intent.putExtra("EXTRA_INT4", i2);
+        startActivity(intent);
     }
 }
