@@ -18,16 +18,21 @@ public class thirdPage extends AppCompatActivity {
     }
     public void Summary(View view) {
         Intent intent = new Intent(this, Summary.class);
+
         EditText editText2 = (EditText) findViewById(R.id.editText3);
         String message2 = editText2.getText().toString();
+
         int finalMessage2 = Integer.parseInt(message2);
         intent.putExtra("EXTRA_INT1", finalMessage2);
+
         EditText editText3 = (EditText) findViewById(R.id.editText4);
         String message3 = editText3.getText().toString();
         int finalMessage3 = Integer.parseInt(message3);
         intent.putExtra("EXTRA_INT2", finalMessage3);
+
         int i1 = getIntent().getIntExtra("EXTRA_INT1", -1);
         int i2 = getIntent().getIntExtra("EXTRA_INT2", -1);
+
         intent.putExtra("EXTRA_INT3", i1);
         intent.putExtra("EXTRA_INT4", i2);
         startActivity(intent);
