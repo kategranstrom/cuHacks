@@ -19,5 +19,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, secondPage.class);
         startActivity(intent);
     }
-
+    public void gothirdPage(View view) {
+        Intent intent = new Intent(this, thirdPage.class);
+        //EditText editText = (EditText) findViewById(R.id.editText3);
+        //String message = editText.getText().toString();
+        //int finalMessage = Integer.parseInt(message);
+        //intent.putExtra("EXTRA_INT", finalMessage);
+        startActivity(intent);
+    }
 }

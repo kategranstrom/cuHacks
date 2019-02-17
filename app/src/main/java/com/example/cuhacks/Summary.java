@@ -16,20 +16,21 @@ public class Summary extends AppCompatActivity {
         setContentView(R.layout.activity_summary);
     }
 
-    public void editIncome (View view){
-            Intent intent = new Intent(this, secondPage.class);
-            startActivity(intent);
-        }
+    public void editIncome(View view) {
+        Intent intent = new Intent(this, secondPage.class);
+        startActivity(intent);
+    }
 
-    public void editCustody (View view) {
+    public void editCustody(View view) {
         Intent intent = new Intent(this, thirdPage.class);
         startActivity(intent);
     }
 
-    public void goBack (View view) {
+    public void goBack(View view) {
         Intent intent = new Intent(this, thirdPage.class);
         startActivity(intent);
 
 
-        }
+    }
+}
 
