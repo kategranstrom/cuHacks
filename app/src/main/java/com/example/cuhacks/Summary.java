@@ -63,7 +63,7 @@ public class Summary extends AppCompatActivity {
     public void goBack(View view) {
         Intent intent = new Intent(this, thirdPage.class);
         startActivity(intent);
-    }
+        }
 
     public void calculate(View view) {
         Intent intent = new Intent(this, totalpage.class);
@@ -71,6 +71,9 @@ public class Summary extends AppCompatActivity {
 
         if(parent_income_1<= 50000 )
         {
+            if (parent_kids_2 == 0) {
+                parent_support_1 = 0.0;
+            }
             if(parent_kids_2 == 1 )
             {
                 parent_support_1 = parent_income_1 * 0.00629;
@@ -91,6 +94,10 @@ public class Summary extends AppCompatActivity {
         }
         else if (parent_income_1 > 50000 && parent_income_1 <= 100000)
         {
+            if (parent_kids_2 == 0) {
+                parent_support_1 = 0.0;
+            }
+
             if(parent_kids_2 == 1)
             {
                 parent_support_1 = parent_income_1 * 0.008641;
@@ -110,6 +117,10 @@ public class Summary extends AppCompatActivity {
         }
         else if (parent_income_1 > 100000 && parent_income_1 <= 150000)
         {
+            if (parent_kids_2 == 0) {
+                parent_support_1 = 0.0;
+            }
+
             if(parent_kids_2 == 1)
             {
                 parent_support_1 = parent_income_1 * 0.008869;
@@ -122,111 +133,36 @@ public class Summary extends AppCompatActivity {
             {
                 parent_support_1 = parent_income_1 * 0.01855;
             }
-            else
+            else //4th Child and above
             {
                 parent_support_1 = parent_income_1 * 0.022083;
             }
         }
-        else
-        {
-            if(parent_kids_2 == 1)
-            {
-                parent_support_1 = (parent_income_1 * 0.72) +1299;
+        else {
+            if (parent_kids_2 == 0) {
+                parent_support_1 = 0.0;
             }
-            else if (parent_kids_2 == 2)
-            {
+            if (parent_kids_2 == 1) {
+                parent_support_1 = (parent_income_1 * 0.72) + 1299;
+            }
+            else if (parent_kids_2 == 2) {
                 parent_support_1 = (parent_income_1 * 1.20) + 2077;
             }
-            else if (parent_kids_2 == 3)
-            {
-                parent_support_1 = (parent_income_1 * 1.46) +2698;
+            else if (parent_kids_2 == 3) {
+                parent_support_1 = (parent_income_1 * 1.46) + 2698;
             }
-            else
+            else //Forth Child and above
             {
-                parent_support_1 = (parent_income_1 * 1.76) +3207;
+                parent_support_1 = (parent_income_1 * 1.76) + 3207;
             }
-
-            if(parent_income_1<= 50000 )
-            {
-                if(parent_kids_2 == 1 )
-                {
-                    parent_support_1 = parent_income_1 * 0.00629;
-                }
-                else if (parent_kids_2 == 2 )
-                {
-                    parent_support_1 = parent_income_1 * 0.01095;
-                }
-                else if (parent_kids_2 == 3)
-                {
-                    parent_support_1 = parent_income_1 * 0.014747;
-                }
-                else
-                {
-                    parent_support_1 = parent_income_1 * 0.01621;
-                }
-
-            }
-            else if (parent_income_1 > 50000 && parent_income_1 <= 100000)
-            {
-                if(parent_kids_2 == 1)
-                {
-                    parent_support_1 = parent_income_1 * 0.008641;
-                }
-                else if (parent_kids_2 == 2)
-                {
-                    parent_support_1 = parent_income_1 * 0.01424;
-                }
-                else if (parent_kids_2 == 3)
-                {
-                    parent_support_1 = parent_income_1 * 0.01833;
-                }
-                else
-                {
-                    parent_support_1 = parent_income_1 * 0.02238;
-                }
-            }
-            else if (parent_income_1 > 100000 && parent_income_1 <= 150000)
-            {
-                if(parent_kids_2 == 1)
-                {
-                    parent_support_1 = parent_income_1 * 0.008869;
-                }
-                else if (parent_kids_2 == 2)
-                {
-                    parent_support_1 = parent_income_1 * 0.01438;
-                }
-                else if (parent_kids_2 == 3)
-                {
-                    parent_support_1 = parent_income_1 * 0.01855;
-                }
-                else
-                {
-                    parent_support_1 = parent_income_1 * 0.022083;
-                }
-            }
-            else
-            {
-                if(parent_kids_2 == 1)
-                {
-                    parent_support_1 = (parent_income_1 * 0.72) +1299;
-                }
-                else if (parent_kids_2 == 2)
-                {
-                    parent_support_1 = (parent_income_1 * 1.20) + 2077;
-                }
-                else if (parent_kids_2 == 3)
-                {
-                    parent_support_1 = (parent_income_1 * 1.46) +2698;
-                }
-                else
-                {
-                    parent_support_1 = (parent_income_1 * 1.76) +3207;
-                }
-            }
+        }
 
 
             if(parent_income_2<= 50000 )
             {
+                if(parent_kids_1 == 0) {
+                    parent_support_2 = 0.0;
+                }
                 if(parent_kids_1 == 1 )
                 {
                     parent_support_2 = parent_income_2 * 0.00629;
@@ -247,6 +183,9 @@ public class Summary extends AppCompatActivity {
             }
             else if (parent_income_2 > 50000 && parent_income_2 <= 100000)
             {
+                if (parent_kids_1 == 0) {
+                    parent_support_2 = 0.0;
+                }
                 if(parent_kids_1 == 1)
                 {
                     parent_support_2 = parent_income_2 * 0.008641;
@@ -266,6 +205,9 @@ public class Summary extends AppCompatActivity {
             }
             else if (parent_income_2 > 100000 && parent_income_2 <= 150000)
             {
+                if(parent_kids_1 == 0) {
+                    parent_support_2 = 0.0;
+                }
                 if(parent_kids_1 == 1)
                 {
                     parent_support_2 = parent_income_2 * 0.008869;
@@ -283,104 +225,29 @@ public class Summary extends AppCompatActivity {
                     parent_support_2 = parent_income_2 * 0.022083;
                 }
             }
-            else
-            {
-                if(parent_kids_1 == 1)
-                {
-                    parent_support_2 = (parent_income_2 * 0.72) +1299;
+            else {
+                if(parent_kids_1 == 0) {
+                    parent_support_2 = 0.0;
                 }
-                else if (parent_kids_1 == 2)
-                {
+                if (parent_kids_1 == 1) {
+                    parent_support_2 = (parent_income_2 * 0.72) + 1299;
+                }
+                else if (parent_kids_1 == 2) {
                     parent_support_2 = (parent_income_2 * 1.20) + 2077;
                 }
-                else if (parent_kids_1 == 3)
-                {
-                    parent_support_2 = (parent_income_2 * 1.46) +2698;
+                else if (parent_kids_1 == 3) {
+                    parent_support_2 = (parent_income_2 * 1.46) + 2698;
                 }
-                else
-                {
-                    parent_support_2 = (parent_income_2 * 1.76) +3207;
+                else {
+                    parent_support_2 = (parent_income_2 * 1.76) + 3207;
                 }
+            }
 
-                if(parent_income_1<= 50000 )
-                {
-                    if(parent_kids_2 == 1 )
-                    {
-                        parent_support_1 = parent_income_1 * 0.00629;
-                    }
-                    else if (parent_kids_2 == 2 )
-                    {
-                        parent_support_1 = parent_income_1 * 0.01095;
-                    }
-                    else if (parent_kids_2 == 3)
-                    {
-                        parent_support_1 = parent_income_1 * 0.014747;
-                    }
-                    else
-                    {
-                        parent_support_1 = parent_income_1 * 0.01621;
-                    }
 
-                }
-                else if (parent_income_1 > 50000 && parent_income_1 <= 100000)
-                {
-                    if(parent_kids_2 == 1)
-                    {
-                        parent_support_1 = parent_income_1 * 0.008641;
-                    }
-                    else if (parent_kids_2 == 2)
-                    {
-                        parent_support_1 = parent_income_1 * 0.01424;
-                    }
-                    else if (parent_kids_2 == 3)
-                    {
-                        parent_support_1 = parent_income_1 * 0.01833;
-                    }
-                    else
-                    {
-                        parent_support_1 = parent_income_1 * 0.02238;
-                    }
-                }
-                else if (parent_income_1 > 100000 && parent_income_1 <= 150000)
-                {
-                    if(parent_kids_2 == 1)
-                    {
-                        parent_support_1 = parent_income_1 * 0.008869;
-                    }
-                    else if (parent_kids_2 == 2)
-                    {
-                        parent_support_1 = parent_income_1 * 0.01438;
-                    }
-                    else if (parent_kids_2 == 3)
-                    {
-                        parent_support_1 = parent_income_1 * 0.01855;
-                    }
-                    else
-                    {
-                        parent_support_1 = parent_income_1 * 0.022083;
-                    }
-                }
-                else
-                {
-                    if(parent_kids_2 == 1)
-                    {
-                        parent_support_1 = (parent_income_1 * 0.72) +1299;
-                    }
-                    else if (parent_kids_2 == 2)
-                    {
-                        parent_support_1 = (parent_income_1 * 1.20) + 2077;
-                    }
-                    else if (parent_kids_2 == 3)
-                    {
-                        parent_support_1 = (parent_income_1 * 1.46) +2698;
-                    }
-                    else
-                    {
-                        parent_support_1 = (parent_income_1 * 1.76) +3207;
-                    }
-                }
 
-                diff = (parent_support_1 - parent_support_2) * -1;
+
+
+                diff = (parent_support_1 - parent_support_2); //Need Absolute Value
 
                 Intent intent2 = new Intent(this, totalpage.class);
 
@@ -391,19 +258,23 @@ public class Summary extends AppCompatActivity {
                     intent2.putExtra("name",whichParent);
                     intent2.putExtra("amount",diff);
                 }
-                else
+                else if (parent_support_2 > parent_support_1)
                 {
                     whichParent = "Parent 2";
                     intent2.putExtra("name",whichParent);
                     intent2.putExtra("amount",diff);
 
                 }
-            }
+                else
+                {
+                    whichParent = "Both Parents";
+                    intent2.putExtra("name",whichParent);
+                    intent2.putExtra("amount",diff);
+                }
 
 
 
         }
     }
 
-}
 
